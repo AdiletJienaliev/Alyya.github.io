@@ -268,7 +268,7 @@
 -58 -85 -48 12 -55 66 -11 84 28 12 40 12 69 1z"/></g>
     </svg>
     <p class="sub">29 желаний · кликни на карточку — откроется подарок</p>
-    <p class="note"><b>★</b> — точная ссылка на товар, работает в любом магазине</p>
+    <p class="note"><b>★</b> — есть точная ссылка: откроется на вкладке Pinduoduo</p>
     <div class="shops" role="group" aria-label="Выбор магазина">
       <span class="pill"></span>
       <button type="button" data-shop="kaspi" aria-pressed="true">Kaspi</button>
@@ -560,7 +560,7 @@
 
   function apply(){
     cards.forEach(function(a){
-      a.href = a.dataset.url ? a.dataset.url : SHOPS[shop](a);
+      a.href = (shop === 'pdd' && a.dataset.url) ? a.dataset.url : SHOPS[shop](a);
       a.target = '_blank';
       a.rel = 'noopener noreferrer';
     });
